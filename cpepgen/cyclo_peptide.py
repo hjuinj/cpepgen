@@ -45,7 +45,7 @@ class Peptide():
 
         residues = [self.process_residue(r, idx) for idx,r in enumerate(sequence)]
         residues = [self.n_methylate(res) if (idx+1) in methylation_sites else res for idx, res in enumerate(residues)]
-        self.peptide = reduce(make_peptide_bond, residues)
+        self.peptide = reduce(make_peptide_bond, residues) #FIXME
 
 
     def process_residue(self, res, idx):
